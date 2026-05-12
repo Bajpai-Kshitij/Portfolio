@@ -1,0 +1,171 @@
+{
+  "personal": {
+    "name": "Kshitij Bajpai",
+    "title": "Software Engineer | Backend Systems Engineer",
+    "tagline": "Building scalable payment systems, distributed architectures, and production-grade backend ecosystems.",
+    "email": "hbajpaikshitij@gmail.com",
+    "phone": "+91 6393861700",
+    "location": "Gurgaon, India",
+    "resumeLink": "/resume.pdf",
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/Kshitij-Bajpai",
+    "heroImage": "/bajpai.webp"
+  },
+
+  "navbar": [
+    {
+      "label": "Journey",
+      "target": "timeline"
+    },
+    {
+      "label": "Skills",
+      "target": "skills"
+    },
+    {
+      "label": "Projects",
+      "target": "projects"
+    },
+    {
+      "label": "Contact",
+      "target": "contact"
+    }
+  ],
+
+"timeline": [
+  {
+    "id": 1,
+    "type": "experience",
+    "title": "Software Developer Engineer - II",
+    "organization": "Stashfin Pvt. Ltd.",
+    "duration": "Mar 2025 - Present",
+    "location": "Gurgaon, India",
+    "description": [
+      "Maintained post-disbursement payment systems powering UPI, eNACH mandates, repayments, and lending workflows.",
+      "Resolved distributed production issues across payment microservices, improving reliability and reducing transaction failures.",
+      "Built secure JWT-authenticated REST APIs for internal workflows and inter-service communication.",
+      "Engineered internal admin dashboards for audit automation, compliance readiness, and operational observability."
+    ]
+  },
+  {
+    "id": 2,
+    "type": "experience",
+    "title": "Software Developer",
+    "organization": "Yatra Freight (Nimap Infotech Pvt. Ltd.)",
+    "duration": "Feb 2024 - Feb 2025",
+    "location": "Gurgaon, India",
+    "description": [
+      "Built backend systems automating lane creation, vendor bidding, and freight workflow optimization.",
+      "Designed asynchronous logistics workflows improving throughput and reducing manual operational effort.",
+      "Optimized SQL and aggregation systems for speed, compliance, and resilience.",
+      "Developed scalable logistics interfaces improving processing speed and operational control."
+    ]
+  },
+  {
+    "id": 3,
+    "type": "experience",
+    "title": "Software Developer",
+    "organization": "Antino Labs Pvt. Ltd.",
+    "duration": "Oct 2022 - Jan 2024",
+    "location": "Gurgaon, India",
+    "description": [
+      "Built scalable payment gateway integrations across multiple providers.",
+      "Improved backend performance through optimized data workflows and scalable API systems.",
+      "Developed scheduling, communications, and automation infrastructure.",
+      "Implemented secure production APIs and dynamic document generation systems."
+    ]
+  },
+  {
+    "id": 4,
+    "type": "experience",
+    "title": "Senior System Engineer",
+    "organization": "Infosys Pvt. Ltd.",
+    "duration": "Nov 2020 - Sep 2022",
+    "location": "Bengaluru, India",
+    "description": [
+      "Designed Kafka streaming systems processing 14–15 million messages per hour.",
+      "Improved real-time query performance across analytical systems.",
+      "Optimized enterprise network throughput and protocol performance.",
+      "Contributed to internal automation and enterprise-grade deployment workflows."
+    ]
+  },
+  {
+    "id": 5,
+    "type": "education",
+    "title": "B.Tech - Computer Science & Engineering",
+    "organization": "Galgotias College",
+    "duration": "2016 - 2020",
+    "location": "Greater Noida, India",
+    "description": [
+      "Graduated with 8.02 GPA.",
+      "Built foundations in software engineering, object-oriented programming, algorithms, and backend systems.",
+      "Focused deeply on technical growth and scalable systems thinking."
+    ]
+  },
+  {
+    "id": 6,
+    "type": "education",
+    "title": "Senior Secondary Schooling",
+    "organization": "Kendriya Vidyalaya",
+    "duration": "2014 - 2015",
+    "location": "Jalandhar, India",
+    "description": [
+      "Achieved 89% academic performance.",
+      "Strengthened analytical and scientific foundations."
+    ]
+  },
+  {
+    "id": 7,
+    "type": "education",
+    "title": "Secondary Schooling",
+    "organization": "Kendriya Vidyalaya",
+    "duration": "2012 - 2013",
+    "location": "Jalandhar, India",
+    "description": [
+      "Achieved 10 CGPA.",
+      "Established strong academic discipline and foundational growth."
+    ]
+  }
+],
+
+  "skills": [
+    {
+      "cluster": "Backend Engineering",
+      "items": ["Java", "Spring Boot", "Node.js", "NestJS", "REST APIs", "Microservices"]
+    },
+    {
+      "cluster": "Data Systems",
+      "items": ["MySQL", "MongoDB", "Redis", "Kafka", "Apache Druid"]
+    },
+    {
+      "cluster": "DevOps & Deployment",
+      "items": ["Docker", "Jenkins", "CI/CD", "Git", "Kubernetes"]
+    },
+    {
+      "cluster": "Security",
+      "items": ["JWT", "OAuth2", "Authentication", "Authorization"]
+    },
+    {
+      "cluster": "Frontend & Supporting",
+      "items": ["React", "Next.js", "Redux", "Django"]
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Distributed Payment Reliability Systems",
+      "description": "Built and maintained secure post-disbursement payment infrastructure handling mandates, repayments, and audit workflows.",
+      "stack": ["Java", "Redis", "MySQL", "JWT"]
+    },
+    {
+      "title": "Kafka-Driven Logistics Automation",
+      "description": "Designed asynchronous logistics bidding and lane creation systems with high-throughput architecture.",
+      "stack": ["NestJS", "Kafka", "Redis", "Next.js"]
+    }
+  ],
+
+  "contact": {
+    "email": "hbajpaikshitij@gmail.com",
+    "linkedin": "https://linkedin.com/in/Kshitij-Bajpai",
+    "phone": "+91 6393861700"
+  }
+}

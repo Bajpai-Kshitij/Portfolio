@@ -52,6 +52,12 @@ export default function Navbar({ data }) {
               {item.label}
             </button>
           ))}
+          <a
+            href="/blog"
+            className="text-sm hover:text-cyan-400 transition"
+          >
+            Blog
+          </a>
 
           <a
             href={data.personal.resumeLink}
@@ -84,6 +90,13 @@ export default function Navbar({ data }) {
               {item.label}
             </button>
           ))}
+
+          <a
+            href="/blog"
+            className="text-left hover:text-cyan-400 transition"
+          >
+            Blog
+          </a>
 
           <a
             href={data.personal.resumeLink}

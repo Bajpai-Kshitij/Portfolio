@@ -1,36 +1,22 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Timeline from "./components/Timeline";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import portfolioData from "./data/portfolioData.json";
+import HomePage from "./pages/HomePage";
+import BlogPage from "./pages/BlogPage";
+import BlogPost from "./pages/BlogPost";
 
 export default function App() {
   return (
-    <div className="bg-primaryBg text-white overflow-x-hidden">
-      
-      {/* Sticky Navigation */}
-      <Navbar data={portfolioData} />
+    <BrowserRouter>
+      <Routes>
+        {/* Portfolio */}
+        <Route path="/" element={<HomePage />} />
 
-      {/* Hero Section */}
-      <Hero data={portfolioData} />
+        {/* Blog Listing */}
+        <Route path="/blog" element={<BlogPage />} />
 
-      {/* Timeline / Journey */}
-      <Timeline timeline={portfolioData.timeline} />
-
-      {/* Skills */}
-      <Skills skills={portfolioData.skills} />
-
-      {/* Projects */}
-      <Projects projects={portfolioData.projects} />
-
-      {/* Contact */}
-      <Contact
-        personal={portfolioData.personal}
-        contact={portfolioData.contact}
-      />
-    </div>
+        {/* Blog Post */}
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

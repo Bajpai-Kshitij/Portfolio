@@ -266,81 +266,248 @@
 
 
 "systems": [
-  {
-    "title": "Dynamic Payment Gateway Routing",
+{
+  "title": "Dynamic Payment Gateway Routing",
+  "domain": "Digital Lending · Payments",
 
-    "domain": "Financial Systems",
+  "summary": "Designed a dynamic routing engine that selected the most reliable payment gateway using live success-rate metrics instead of static configurations.",
 
-    "problem": "Payment gateway availability fluctuated, reducing transaction success rates.",
+  "problem": "Static routing continued sending traffic to payment gateways even when their success rates degraded, increasing failed collections and requiring operational intervention.",
 
-    "solution": "Designed Redis-based routing that selected gateways using live success-rate metrics.",
+  "solution": "Built a routing service that continuously evaluated gateway health using Redis-backed rolling success-rate calculations and automatically selected the best available gateway for every payment request.",
 
-    "impact": "Improved payment reliability and reduced operational intervention.",
+  "stack": [
+    "Java 17",
+    "Spring Boot",
+    "Redis",
+    "MySQL",
+    "REST APIs"
+  ],
 
-    "stack": [
-      "Java",
-      "Spring Boot",
-      "Redis",
-      "MySQL"
-    ]
-  },
+  "architecture": [
+    "Client Request",
+    "API Gateway",
+    "Payment Router",
+    "Redis Success Rate Cache",
+    "Gateway Selection Engine",
+    "ICICI / Razorpay",
+    "Payment Response"
+  ],
 
-  {
-    "title": "Mandate Processing Engine",
+  "decisions": [
+    "Maintained rolling gateway success metrics inside Redis.",
+    "Separated routing logic from payment orchestration.",
+    "Used configurable success-rate thresholds instead of hardcoded routing.",
+    "Allowed automatic gateway recovery once performance stabilized."
+  ],
 
-    "domain": "Lending",
+  "challenges": [
+    "Preventing stale routing decisions.",
+    "Avoiding frequent switching between gateways.",
+    "Keeping routing latency extremely low.",
+    "Handling gateway degradation without impacting users."
+  ],
 
-    "problem": "Mandate presentation processing required nearly one day.",
+  "results": [
+    "Improved routing resilience.",
+    "Reduced dependency on manual gateway selection.",
+    "Provided automatic failover during gateway instability.",
+    "Improved production reliability."
+  ],
 
-    "solution": "Optimized workflow execution and backend processing across payment services.",
+  "learnings": "Distributed payment routing is fundamentally a reliability problem. Small routing decisions can significantly influence system availability and customer payment success."
+},
 
-    "impact": "Reduced processing time from roughly one day to nearly one hour.",
+{
+  "title": "Mandate Presentation Optimization",
+  "domain": "Digital Lending · Collections",
 
-    "stack": [
-      "Java",
-      "Kafka",
-      "RabbitMQ",
-      "Redis"
-    ]
-  },
+  "summary": "Optimized the mandate presentation workflow, reducing overall processing time from nearly one day to approximately 1–2 hours.",
 
-  {
-    "title": "Vendor Bidding Workflow",
+  "problem": "Mandate presentation jobs processed large batches inefficiently, delaying collections and increasing operational dependency.",
 
-    "domain": "Logistics",
+  "solution": "Redesigned the processing workflow to eliminate unnecessary bottlenecks, improve execution flow, and optimize scheduling without compromising processing consistency.",
 
-    "problem": "Vendor allocation required manual coordination.",
+  "stack": [
+    "Java",
+    "Spring Boot",
+    "Schedulers",
+    "MySQL"
+  ],
 
-    "solution": "Designed asynchronous bidding workflows with Kafka event processing.",
+  "architecture": [
+    "Scheduler",
+    "Presentation Service",
+    "Mandate Validation",
+    "Presentation Queue",
+    "Bank Processing",
+    "Status Update"
+  ],
 
-    "impact": "Improved operational efficiency and shipment allocation.",
+  "decisions": [
+    "Optimized batch execution strategy.",
+    "Reduced unnecessary sequential processing.",
+    "Improved scheduling efficiency.",
+    "Maintained consistency across large processing batches."
+  ],
 
-    "stack": [
-      "NestJS",
-      "Kafka",
-      "Redis",
-      "MySQL"
-    ]
-  },
+  "challenges": [
+    "Ensuring no mandate presentations were skipped.",
+    "Maintaining data consistency while increasing throughput.",
+    "Handling large production workloads safely."
+  ],
 
-  {
-    "title": "Lawyer Consultation Platform",
+  "results": [
+    "Reduced processing time from nearly one day to approximately 1–2 hours.",
+    "Improved operational efficiency.",
+    "Accelerated downstream collection workflows."
+  ],
 
-    "domain": "Legal Tech",
+  "learnings": "Performance improvements often come from redesigning execution flow rather than simply adding more infrastructure."
+},
 
-    "problem": "Consultation scheduling, payments and payouts were fragmented.",
+{
+  "title": "Reliable Repayment Processing",
+  "domain": "Digital Lending · Repayments",
 
-    "solution": "Built an integrated workflow connecting meetings, payments, notifications and payouts.",
+  "summary": "Improved repayment reliability by designing safe processing flows capable of handling duplicate callbacks and concurrent payment events.",
 
-    "impact": "Enabled end-to-end consultation lifecycle through a unified backend.",
+  "problem": "Payment providers may retry callbacks or send duplicate notifications, creating the risk of processing the same repayment multiple times.",
 
-    "stack": [
-      "Node.js",
-      "MongoDB",
-      "AWS",
-      "S3"
-    ]
-  }
+  "solution": "Implemented validation and controlled processing flows that ensured repayments remained consistent even when duplicate events or retries occurred.",
+
+  "stack": [
+    "Java",
+    "Spring Boot",
+    "MySQL",
+    "REST APIs"
+  ],
+
+  "architecture": [
+    "Payment Gateway",
+    "Webhook",
+    "Validation Layer",
+    "Repayment Service",
+    "Database",
+    "Notification Service"
+  ],
+
+  "decisions": [
+    "Validated every incoming repayment request before processing.",
+    "Designed processing flow to tolerate duplicate events safely.",
+    "Separated business validation from payment execution.",
+    "Maintained consistent repayment state transitions."
+  ],
+
+  "challenges": [
+    "Handling asynchronous payment notifications.",
+    "Avoiding duplicate repayment processing.",
+    "Maintaining consistency during retries."
+  ],
+
+  "results": [
+    "Improved repayment reliability.",
+    "Reduced inconsistent repayment states.",
+    "Increased confidence in payment processing."
+  ],
+
+  "learnings": "Financial systems must assume every external callback can be delayed, duplicated, or arrive out of order."
+},
+
+{
+  "title": "Reliable Repayment Processing",
+  "domain": "Digital Lending · Repayments",
+
+  "summary": "Improved repayment reliability by designing safe processing flows capable of handling duplicate callbacks and concurrent payment events.",
+
+  "problem": "Payment providers may retry callbacks or send duplicate notifications, creating the risk of processing the same repayment multiple times.",
+
+  "solution": "Implemented validation and controlled processing flows that ensured repayments remained consistent even when duplicate events or retries occurred.",
+
+  "stack": [
+    "Java",
+    "Spring Boot",
+    "MySQL",
+    "REST APIs"
+  ],
+
+  "architecture": [
+    "Payment Gateway",
+    "Webhook",
+    "Validation Layer",
+    "Repayment Service",
+    "Database",
+    "Notification Service"
+  ],
+
+  "decisions": [
+    "Validated every incoming repayment request before processing.",
+    "Designed processing flow to tolerate duplicate events safely.",
+    "Separated business validation from payment execution.",
+    "Maintained consistent repayment state transitions."
+  ],
+
+  "challenges": [
+    "Handling asynchronous payment notifications.",
+    "Avoiding duplicate repayment processing.",
+    "Maintaining consistency during retries."
+  ],
+
+  "results": [
+    "Improved repayment reliability.",
+    "Reduced inconsistent repayment states.",
+    "Increased confidence in payment processing."
+  ],
+
+  "learnings": "Financial systems must assume every external callback can be delayed, duplicated, or arrive out of order."
+},
+
+{
+  "title": "Corporate Bonds Investment Platform",
+  "domain": "Financial Services",
+
+  "summary": "Developed backend services supporting corporate bond investment workflows while maintaining secure and reliable financial operations.",
+
+  "problem": "Investment operations required reliable backend services capable of handling business workflows while maintaining secure transaction processing.",
+
+  "solution": "Designed and maintained backend APIs supporting corporate bond operations, integrating business workflows with secure service communication.",
+
+  "stack": [
+    "Java",
+    "Spring Boot",
+    "MySQL",
+    "REST APIs"
+  ],
+
+  "architecture": [
+    "Client",
+    "REST APIs",
+    "Business Services",
+    "Database",
+    "External Financial Services"
+  ],
+
+  "decisions": [
+    "Designed modular service boundaries.",
+    "Separated business logic from API controllers.",
+    "Focused on maintainability and production stability.",
+    "Used layered architecture for extensibility."
+  ],
+
+  "challenges": [
+    "Supporting evolving business requirements.",
+    "Maintaining production stability.",
+    "Balancing performance with maintainability."
+  ],
+
+  "results": [
+    "Delivered production-ready backend services.",
+    "Supported financial investment workflows.",
+    "Improved maintainability through modular design."
+  ],
+
+  "learnings": "Well-defined service boundaries make complex financial systems easier to evolve while minimizing operational risk."
+}
 ],
 
 "expertise":[

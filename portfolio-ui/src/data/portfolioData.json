@@ -1,51 +1,144 @@
 {
+
   "personal": {
-    "name": "Kshitij Bajpai",
-    "title": "Software Engineer | Backend Systems Engineer",
-    "tagline": "Building scalable payment systems, distributed architectures, and production-grade backend ecosystems.",
     "email": "hbajpaikshitij@gmail.com",
     "phone": "+91 6393861700",
     "location": "Gurgaon, India",
     "resumeLink": "/resume.pdf",
     "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/Kshitij-Bajpai",
-    "heroImage": "/bajpai.webp"
+    "linkedin": "https://linkedin.com/in/Kshitij-Bajpai"
   },
 
-  "navbar": [
+  "hero": {
+    "badge": "Backend Systems Engineer",
+    "name": "Kshitij Bajpai",
+    "headline": "Designing reliable workflow-driven backend systems for financial platforms, logistics, and enterprise software.",
+    "buttons": [
+      {
+        "label": "Download Resume",
+        "type": "resume"
+      },
+      {
+        "label": "Explore Journey",
+        "type": "scroll",
+        "target": "journey"
+      }
+    ],
+    "stats": [
+  {
+    "number": "5+",
+    "label": "Years Experience"
+  },
+  {
+    "number": "4",
+    "label": "Industries"
+  },
+  {
+    "number": "8+",
+    "label": "Production Services"
+  }
+    ],
+    "principles": [
+      "Design for Failure",
+      "Think in Systems",
+      "Production Ownership"
+    ],
+    "quote": "Good backend systems aren't judged when everything works. They're judged by how gracefully they recover when things don't.",
+    "image": {
+  "src": "/bajpai.webp",
+  "alt": "Portrait of Kshitij Bajpai"
+}
+  },
+
+  "philosophy": {
+  "badge": "Engineering Philosophy",
+  "title": "How I Approach Software Engineering",
+
+  "description": "I enjoy designing backend systems that continue to work when reality doesn't go according to plan. For me, writing code is only one part of engineering; understanding failure, scale and operational behavior is where the real work begins.",
+
+  "cards": [
     {
-      "label": "Journey",
-      "target": "timeline"
+      "title": "Design for Failure",
+      "description": "Every distributed system eventually fails. Good engineering is designing how software recovers when it does."
     },
     {
-      "label": "Skills",
-      "target": "skills"
+      "title": "Think in Systems",
+      "description": "I enjoy understanding workflows, architecture and dependencies before writing code."
     },
     {
-      "label": "Projects",
-      "target": "projects"
-    },
-    {
-      "label": "Contact",
-      "target": "contact"
+      "title": "Production Ownership",
+      "description": "Production incidents are opportunities to understand how real systems behave under pressure."
     }
   ],
 
+  "quote": "Design is where engineering begins. Code is simply one way to express it."
+},
+
+"navbar":[
+  {
+    "label":"About",
+    "target":"philosophy"
+  },
+  {
+    "label":"Expertise",
+    "target":"expertise"
+  },
+  {
+    "label":"Systems",
+    "target":"systems"
+  },
+  {
+    "label":"Journey",
+    "target":"journey"
+  },
+  {
+    "label":"Writing",
+    "target":"writing"
+  },
+  {
+    "label":"Contact",
+    "target":"contact"
+  }
+],
+
 "timeline": [
   {
-    "id": 1,
-    "type": "experience",
-    "title": "Software Developer Engineer - II",
-    "organization": "Stashfin Pvt. Ltd.",
-    "duration": "Mar 2025 - Present",
-    "location": "Gurgaon, India",
-    "description": [
-      "Maintained post-disbursement payment systems powering UPI, eNACH mandates, repayments, and lending workflows.",
-      "Resolved distributed production issues across payment microservices, improving reliability and reducing transaction failures.",
-      "Built secure JWT-authenticated REST APIs for internal workflows and inter-service communication.",
-      "Engineered internal admin dashboards for audit automation, compliance readiness, and operational observability."
-    ]
-  },
+  "id":1,
+
+  "type":"experience",
+
+  "title":"Software Development Engineer II",
+
+  "organization":"Stashfin Pvt. Ltd.",
+
+  "duration":"Mar 2025 - Present",
+
+  "location":"Gurgaon, India",
+
+  "ownership":[
+    "Mandate Service",
+    "Payments",
+    "Post-disbursement Workflows"
+  ],
+
+  "highlights":[
+    "Reduced mandate presentation processing from nearly one day to 1–2 hours.",
+    "Built Redis-based payment gateway routing using live success-rate data.",
+    "Implemented distributed locking to prevent duplicate repayments and webhook races.",
+    "Worked across multiple payment microservices supporting lending workflows."
+  ],
+
+  "stack":[
+    "Java",
+    "Spring Boot",
+    "Redis",
+    "Kafka",
+    "RabbitMQ",
+    "MySQL",
+    "Docker",
+    "Kubernetes"
+  ]
+},
   {
     "id": 2,
     "type": "experience",
@@ -53,12 +146,27 @@
     "organization": "Yatra Freight (Nimap Infotech Pvt. Ltd.)",
     "duration": "Feb 2024 - Feb 2025",
     "location": "Gurgaon, India",
-    "description": [
-      "Built backend systems automating lane creation, vendor bidding, and freight workflow optimization.",
-      "Designed asynchronous logistics workflows improving throughput and reducing manual operational effort.",
-      "Optimized SQL and aggregation systems for speed, compliance, and resilience.",
-      "Developed scalable logistics interfaces improving processing speed and operational control."
-    ]
+  "ownership":[
+    "Authentication",
+    "Authorization",
+    "Vendor Bidding",
+    "Shipment Tracking"
+  ],
+
+  "highlights":[
+    "Designed vendor bidding workflows.",
+    "Implemented Kafka-based shipment tracking.",
+    "Built authentication and authorization services.",
+    "Improved operational workflow automation."
+  ],
+
+  "stack":[
+    "NestJS",
+    "Kafka",
+    "Redis",
+    "MySQL",
+    "Next.js"
+  ]
   },
   {
     "id": 3,
@@ -67,12 +175,28 @@
     "organization": "Antino Labs Pvt. Ltd.",
     "duration": "Oct 2022 - Jan 2024",
     "location": "Gurgaon, India",
-    "description": [
-      "Built scalable payment gateway integrations across multiple providers.",
-      "Improved backend performance through optimized data workflows and scalable API systems.",
-      "Developed scheduling, communications, and automation infrastructure.",
-      "Implemented secure production APIs and dynamic document generation systems."
-    ]
+  "ownership":[
+    "Legal Platform",
+    "Payment Gateway",
+    "Payout Engine"
+  ],
+
+  "highlights":[
+    "Integrated multiple payment gateways through a common abstraction.",
+    "Built Razorpay payout automation.",
+    "Designed Zoom-based consultation workflow.",
+    "Implemented MongoDB aggregation optimizations."
+  ],
+
+  "stack":[
+    "Node.js",
+    "MongoDB",
+    "AWS",
+    "Lambda",
+    "S3",
+    "Twilio",
+    "SendGrid"
+  ]
   },
   {
     "id": 4,
@@ -81,13 +205,26 @@
     "organization": "Infosys Pvt. Ltd.",
     "duration": "Nov 2020 - Sep 2022",
     "location": "Bengaluru, India",
-    "description": [
-      "Designed Kafka streaming systems processing 14–15 million messages per hour.",
-      "Improved real-time query performance across analytical systems.",
-      "Optimized enterprise network throughput and protocol performance.",
-      "Contributed to internal automation and enterprise-grade deployment workflows."
-    ]
-  },
+  "ownership":[
+    "Kafka Streams",
+    "Network Throughput",
+    "Rule Engine"
+  ],
+
+  "highlights":[
+    "Processed millions of network events through Kafka Streams.",
+    "Implemented rule evaluation for telecom throughput optimization.",
+    "Worked with Apache Druid time-series analytics.",
+    "Optimized enterprise streaming pipelines."
+  ],
+
+  "stack":[
+    "Java",
+    "Kafka Streams",
+    "Apache Druid",
+    "SQL"
+  ]
+},
   {
     "id": 5,
     "type": "education",
@@ -127,45 +264,157 @@
   }
 ],
 
-  "skills": [
-    {
-      "cluster": "Backend Engineering",
-      "items": ["Java", "Spring Boot", "Node.js", "NestJS", "REST APIs", "Microservices"]
-    },
-    {
-      "cluster": "Data Systems",
-      "items": ["MySQL", "MongoDB", "Redis", "Kafka", "Apache Druid"]
-    },
-    {
-      "cluster": "DevOps & Deployment",
-      "items": ["Docker", "Jenkins", "CI/CD", "Git", "Kubernetes"]
-    },
-    {
-      "cluster": "Security",
-      "items": ["JWT", "OAuth2", "Authentication", "Authorization"]
-    },
-    {
-      "cluster": "Frontend & Supporting",
-      "items": ["React", "Next.js", "Redux", "Django"]
-    }
-  ],
 
-  "projects": [
-    {
-      "title": "Distributed Payment Reliability Systems",
-      "description": "Built and maintained secure post-disbursement payment infrastructure handling mandates, repayments, and audit workflows.",
-      "stack": ["Java", "Redis", "MySQL", "JWT"]
-    },
-    {
-      "title": "Kafka-Driven Logistics Automation",
-      "description": "Designed asynchronous logistics bidding and lane creation systems with high-throughput architecture.",
-      "stack": ["NestJS", "Kafka", "Redis", "Next.js"]
-    }
-  ],
+"systems": [
+  {
+    "title": "Dynamic Payment Gateway Routing",
+
+    "domain": "Financial Systems",
+
+    "problem": "Payment gateway availability fluctuated, reducing transaction success rates.",
+
+    "solution": "Designed Redis-based routing that selected gateways using live success-rate metrics.",
+
+    "impact": "Improved payment reliability and reduced operational intervention.",
+
+    "stack": [
+      "Java",
+      "Spring Boot",
+      "Redis",
+      "MySQL"
+    ]
+  },
+
+  {
+    "title": "Mandate Processing Engine",
+
+    "domain": "Lending",
+
+    "problem": "Mandate presentation processing required nearly one day.",
+
+    "solution": "Optimized workflow execution and backend processing across payment services.",
+
+    "impact": "Reduced processing time from roughly one day to nearly one hour.",
+
+    "stack": [
+      "Java",
+      "Kafka",
+      "RabbitMQ",
+      "Redis"
+    ]
+  },
+
+  {
+    "title": "Vendor Bidding Workflow",
+
+    "domain": "Logistics",
+
+    "problem": "Vendor allocation required manual coordination.",
+
+    "solution": "Designed asynchronous bidding workflows with Kafka event processing.",
+
+    "impact": "Improved operational efficiency and shipment allocation.",
+
+    "stack": [
+      "NestJS",
+      "Kafka",
+      "Redis",
+      "MySQL"
+    ]
+  },
+
+  {
+    "title": "Lawyer Consultation Platform",
+
+    "domain": "Legal Tech",
+
+    "problem": "Consultation scheduling, payments and payouts were fragmented.",
+
+    "solution": "Built an integrated workflow connecting meetings, payments, notifications and payouts.",
+
+    "impact": "Enabled end-to-end consultation lifecycle through a unified backend.",
+
+    "stack": [
+      "Node.js",
+      "MongoDB",
+      "AWS",
+      "S3"
+    ]
+  }
+],
+
+"expertise":[
+  {
+    "title":"Backend Engineering",
+    "description":"Designing scalable APIs and backend services.",
+    "skills":[
+      "Java",
+      "Spring Boot",
+      "Node.js",
+      "REST APIs",
+      "Microservices"
+    ]
+  },
+  {
+    "title":"Distributed Systems",
+    "description":"Building resilient asynchronous architectures.",
+    "skills":[
+      "Kafka",
+      "RabbitMQ",
+      "Redis",
+      "Event Driven",
+      "Async Processing"
+    ]
+  },
+  {
+    "title":"Data Engineering",
+    "description":"Optimizing storage, caching and data access.",
+    "skills":[
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Caching",
+      "Query Optimization"
+    ]
+  },
+  {
+    "title":"Cloud & DevOps",
+    "description":"Deploying and operating production systems.",
+    "skills":[
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "CI/CD",
+      "Git"
+    ]
+  },
+  {
+    "title":"Reliability",
+    "description":"Keeping production systems stable.",
+    "skills":[
+      "Authentication",
+      "Observability",
+      "Performance",
+      "Production Debugging"
+    ]
+  }
+],
 
   "contact": {
+      "title": "Let's Build Reliable Systems Together",
+  "description": "Whether you're building payment infrastructure, distributed systems, or backend platforms, I'd be happy to connect.",
     "email": "hbajpaikshitij@gmail.com",
     "linkedin": "https://linkedin.com/in/Kshitij-Bajpai",
     "phone": "+91 6393861700"
-  }
+  },
+
+  "footer": {
+  "copyright": "© 2026 Kshitij Bajpai",
+  "tagline": "Backend Systems Engineer",
+  "builtWith": [
+    "React",
+    "Tailwind CSS",
+    "Framer Motion"
+  ]
+}
 }

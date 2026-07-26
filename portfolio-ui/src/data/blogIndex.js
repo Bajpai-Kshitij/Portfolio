@@ -1,10 +1,12 @@
 import * as paymentSystems from "./blogs/building-reliable-payment-systems";
+import * as cppMap from "./blogs/how-unordered-map-works";
 
 // Add future blogs here:
 // import * as redisCaching from "./blogs/redis-caching-patterns";
 
 const blogPosts = [
-  paymentSystems
+  paymentSystems,
+  cppMap
 ];
 
 const sortedBlogs = blogPosts

@@ -1,4 +1,3 @@
-
 export const meta = {
   slug: "how-unordered-map-works",
   title: "How unordered_map Works Internally in C++",
@@ -11,7 +10,7 @@ export const meta = {
 
 
 export const blog = `
-# What is \`unordered_map\` and Why Do We Even Need It?
+## What is \`unordered_map\` and Why Do We Even Need It?
 
 \`unordered_map<Key, Value>\` is a data structure in C++ that is widely used in competitive programming because of its fast operations such as insertion, deletion, and searching. While other data structures may excel at one operation but perform slower for others, \`unordered_map\` provides average constant-time complexity for all three.
 
@@ -23,7 +22,7 @@ In competitive programming, choosing the right data structure gives you a signif
 
 ---
 
-# Why Do We Need \`unordered_map\`?
+## Why Do We Need \`unordered_map\`?
 
 * It provides average **O(1)** complexity for insertion, deletion, and searching.
 * Other data structures may not perform as efficiently for these operations.
@@ -44,11 +43,11 @@ However, these are **average-case** complexities. The worst-case complexities ar
 
 ---
 
-# How Does \`unordered_map\` Work Internally?
+## How Does \`unordered_map\` Work Internally?
 
 There are several concepts working together behind the scenes. Let's understand each one individually.
 
-## 1. Hashing
+### 1. Hashing
 
 * Hashing is the process of generating a hash value from a given key using a hash function. The same key always produces the same hash value.
 * \`unordered_map\` uses a single hash function (by default \`std::hash<Key>\`).
@@ -58,7 +57,7 @@ There are several concepts working together behind the scenes. Let's understand 
 
 ---
 
-## 2. Bucket
+### 2. Bucket
 
 * Internally, an \`unordered_map\` is divided into multiple buckets.
 * Conceptually, each bucket can either be empty or contain a list of nodes.
@@ -72,7 +71,7 @@ bucket_index = hash_value % bucket_count
 
 ---
 
-## 3. Collision
+### 3. Collision
 
 * A collision occurs when different keys end up mapping to the same bucket.
 * Since two different key-value pairs cannot overwrite each other, they are stored within the same bucket.
@@ -83,7 +82,7 @@ bucket_index = hash_value % bucket_count
 
 ---
 
-## 4. Load Factor
+### 4. Load Factor
 
 The load factor is calculated as:
 
@@ -97,7 +96,7 @@ load_factor = size() / bucket_count()
 
 ---
 
-## 5. Rehash
+### 5. Rehash
 
 Rehashing is the process of increasing the number of buckets and redistributing all existing elements.
 
@@ -116,23 +115,23 @@ As a result:
 
 ---
 
-# How Does \`unordered_map\` Perform Operations?
+## How Does \`unordered_map\` Perform Operations?
 
 Now let's understand what happens internally during insertion, deletion, and searching.
 
-## 1. Insertion
+### 1. Insertion
 
 1. Compute the hash value for the key.
 2. Determine the bucket index using the hash value.
 3. Check whether inserting this element would trigger a rehash.
 4. Check whether the bucket is empty.
 
-### If the bucket is empty
+#### If the bucket is empty
 
 * Create a new node.
 * Insert the node into the bucket.
 
-### If the bucket is not empty
+#### If the bucket is not empty
 
 * Traverse the nodes in the bucket (linear search).
 * Compare the existing keys with the new key.
@@ -150,18 +149,18 @@ Now let's understand what happens internally during insertion, deletion, and sea
 
 ---
 
-## 2. Deletion
+### 2. Deletion
 
 1. Compute the hash value.
 2. Determine the bucket index.
 3. Traverse the bucket.
 
-### If the bucket is empty
+#### If the bucket is empty
 
 * Nothing to delete.
 * Return.
 
-### If the bucket contains nodes
+#### If the bucket contains nodes
 
 * Traverse the nodes until the key is found.
 * If found:
@@ -174,19 +173,19 @@ Now let's understand what happens internally during insertion, deletion, and sea
 
 ---
 
-## 3. Search
+### 3. Search
 
 1. Compute the hash value.
 2. Determine the bucket index.
 3. Traverse the bucket.
 
-### If the bucket is empty
+#### If the bucket is empty
 
 * Return "not found".
 * \`find()\` simply returns \`end()\`.
 * \`operator[]\` performs a **lookup-or-insert**, inserting the key with a default-initialized value if it doesn't exist.
 
-### If the bucket contains nodes
+#### If the bucket contains nodes
 
 * Traverse the nodes one by one.
 * Compare each key with the requested key.
@@ -200,7 +199,7 @@ Now let's understand what happens internally during insertion, deletion, and sea
 
 ---
 
-# Caveats
+## Caveats
 
 Suppose collisions become frequent and the number of nodes in a bucket increases.
 
@@ -210,4 +209,4 @@ Suppose collisions become frequent and the number of nodes in a bucket increases
 
 This is why \`unordered_map\` provides **average O(1)** complexity rather than guaranteed O(1) complexity.
 
-`
+`;

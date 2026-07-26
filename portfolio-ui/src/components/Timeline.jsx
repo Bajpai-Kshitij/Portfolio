@@ -219,7 +219,7 @@ export default function Timeline({ timeline }) {
           <div className="w-4 h-4 rounded-full bg-gray-500 mx-auto mb-4"></div>
 
           <p className="text-gray-500 uppercase tracking-[0.3em] text-xs">
-            27 June 1997
+            Born 1997
           </p>
         </div>
       </div>

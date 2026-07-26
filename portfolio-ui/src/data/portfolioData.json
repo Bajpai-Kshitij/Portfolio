@@ -290,7 +290,7 @@
     "Payment Router",
     "Redis Success Rate Cache",
     "Gateway Selection Engine",
-    "ICICI / Razorpay",
+    "Payment Gateway",
     "Payment Response"
   ],
 

@@ -1,4 +1,6 @@
 import { useParams, Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import blogPosts from "../data/blogIndex";
 
 export default function BlogPost() {
@@ -30,7 +32,6 @@ export default function BlogPost() {
   return (
     <section className="min-h-screen bg-primaryBg text-white px-6 py-24">
       <div className="max-w-4xl mx-auto">
-        
         {/* Back */}
         <Link
           to="/blog"
@@ -77,8 +78,10 @@ export default function BlogPost() {
         )}
 
         {/* Blog Content */}
-        <article className="mt-14 text-gray-300 whitespace-pre-line leading-9 text-lg">
-          {post.blog}
+        <article className="prose prose-invert prose-lg max-w-none mt-14 prose-headings:font-bold prose-a:text-cyan-400 prose-code:text-cyan-300 prose-blockquote:border-cyan-500/40">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {post.blog}
+          </ReactMarkdown>
         </article>
       </div>
     </section>
